@@ -1,16 +1,34 @@
+from flask import Flask
+from threading import Thread
 import discord
 import random
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
+# Health check para Render (OBLIGATORIO)
+app = Flask('')
 
+@app.route('/')
+def home():
+    return "🤖 Bot Discord funcionando 24/7!"
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.daemon = True
+    t.start()
+
+# Iniciar health check
+keep_alive()
+
+# Configuración del bot de Discord
 intents = discord.Intents.default()
 intents.message_content = True
 
 client = discord.Client(intents=intents)
 
-# LISTA MASIVA DE INSULTOS MALSONANTES (sin caracteres especiales)
+# LISTA DE INSULTOS
 INSULTOS = [
     "Eres mas inutil que un condon en un convento",
     "Tienes menos futuro que un sordo en un concurso de beatbox",
@@ -44,7 +62,7 @@ INSULTOS = [
     "Eres mas cansino que un mosquito en la oreja"
 ]
 
-# LISTA DE CHISTES NEGROS (sin caracteres especiales)
+# LISTA DE CHISTES NEGROS
 CHISTES = [
     "Que le dice un negro a otro negro en la piscina? - Cuidado, no te vayas a oxidar!",
     "Por que los negros no usan condon? - Porque no quieren perder el 10% de placer",
@@ -70,26 +88,22 @@ CHISTES = [
 
 @client.event
 async def on_ready():
-    print('🔥 ¡BOT DE HUMOR NEGRO CONECTADO!')
-    print('🤖 Usa @bot para insultos o !chiste para chistes negros')
+    print('🔥 ¡BOT CONECTADO 24/7!')
+    print('🤖 Usa @bot o !chiste en Discord')
 
 @client.event
 async def on_message(message):
-    # Ignorar mensajes del bot
     if message.author == client.user:
         return
     
-    # Si mencionan al bot - INSULTAR!
     if client.user in message.mentions:
         insulto = random.choice(INSULTOS)
         await message.reply(f"{message.author.mention} {insulto} 😈")
     
-    # Comando !chiste - CHISTE NEGRO
     if message.content.startswith('!chiste'):
         chiste = random.choice(CHISTES)
         await message.channel.send(f"**🎭 Chiste Negro:** {chiste}")
         
-    # Comando !insulto - INSULTO DIRECTO
     if message.content.startswith('!insulto'):
         insulto = random.choice(INSULTOS)
         await message.channel.send(f"{message.author.mention} {insulto} 💥")
@@ -100,4 +114,3 @@ if token:
     client.run(token)
 else:
     print("❌ ERROR: No se encontro el token")
-    input("Presiona Enter para salir...")
