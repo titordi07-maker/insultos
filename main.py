@@ -68,8 +68,6 @@ INSULTOS = [
     "Si el fracaso fuera una moneda, tú serías la Casa de la Moneda trabajando horas extras para acuñar tu legado"
 ]
 
-]
-
 # LISTA DE CHISTES NEGROS
 CHISTES = [
     "Que le dice un negro a otro negro en la piscina? - Cuidado, no te vayas a oxidar!",
@@ -126,3 +124,4 @@ if token:
 else:
 
     print("❌ ERROR: No se encontro el token")
+
