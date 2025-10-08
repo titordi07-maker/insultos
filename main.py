@@ -59,13 +59,13 @@ INSULTOS = [
     "Tienes mas mala pata que un perro en una pista de baile",
     "Eres mas triste que un payaso en un tanatorio",
     "Tienes menos salida que un callejon sin salida",
-    "Eres mas cansino que un mosquito en la oreja"
-    "Tus muertos"
-    "Eres tan ingenioso que cada vez que hablas, el universo hace una pausa para preguntarse cómo llegaste tan lejos sin un manual de instrucciones para existir"
-    "Tu presencia es como una obra maestra del caos: un desastre tan perfecto que hasta los huracanes te piden consejos de destrucción"
-    "No digo que seas un inútil, pero si la mediocridad tuviera un rey, tú estarías ocupado puliendo el trono con tu talento para lo absurdo"
-    "Eres la prueba de que Dios a veces juega a los dados y tira un cero crítico, creando un glitch humano con patas"
-    "Si el fracaso fuera una moneda, tú serías la Casa de la Moneda trabajando horas extras para acuñar tu legado"
+    "Eres mas cansino que un mosquito en la oreja",
+    "Tus muertos",
+    "Eres tan ingenioso que cada vez que hablas, el universo hace una pausa para preguntarse cómo llegaste tan lejos sin un manual de instrucciones para existir",
+    "Tu presencia es como una obra maestra del caos: un desastre tan perfecto que hasta los huracanes te piden consejos de destrucción",
+    "No digo que seas un inútil, pero si la mediocridad tuviera un rey, tú estarías ocupado puliendo el trono con tu talento para lo absurdo",
+    "Eres la prueba de que Dios a veces juega a los dados y tira un cero crítico, creando un glitch humano con patas",
+    "Si el fracaso fuera una moneda, tú serías la Casa de la Moneda trabajando horas extras para acuñar tu legado",
 ]
 
 # LISTA DE CHISTES NEGROS
@@ -89,10 +89,10 @@ CHISTES = [
     "Como se llama un negro en la NASA? - Perdido",
     "Por que los negros no pueden ser arbitros? - Porque se comen el silbato",
     "Que hace un negro en la universidad? - Limpiar las aulas",
-    "Cual es el plato favorito de los negros? - Lo que sea que estes comiendo tu"
-    "Por qué la torre de Pisa está inclinada?- Porque tiene más reflejos q las torres gemelas"
-    "Iba a contar un chiste tan negro, tan negro, que se lo llevo la policía"
-    "Por qué una niña con tetraplegia no puede jugar al fútbol?- Porque es mujer"
+    "Cual es el plato favorito de los negros? - Lo que sea que estes comiendo tu",
+    "Por qué la torre de Pisa está inclinada?- Porque tiene más reflejos q las torres gemelas",
+    "Iba a contar un chiste tan negro, tan negro, que se lo llevo la policía",
+    "Por qué una niña con tetraplegia no puede jugar al fútbol?- Porque es mujer",
 ]
 
 @client.event
@@ -124,4 +124,5 @@ if token:
 else:
 
     print("❌ ERROR: No se encontro el token")
+
 
